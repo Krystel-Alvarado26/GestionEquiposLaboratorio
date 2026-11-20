@@ -17,7 +17,11 @@ export default function InicioEstudiante() {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.icono}>🔬</Text>
-        <Text style={styles.titulo}>Portal del estudiante</Text>
+
+        <Text style={styles.titulo}>
+          Portal del estudiante
+        </Text>
+
         <Text style={styles.subtitulo}>
           Sistema de préstamos de laboratorio
         </Text>
@@ -32,60 +36,62 @@ export default function InicioEstudiante() {
           ¿Qué deseas hacer hoy?
         </Text>
 
+        {/* Catálogo de equipos */}
         <TouchableOpacity
           style={styles.tarjeta}
-          onPress={() => Alert.alert(
-            'Próximamente',
-            'Aquí estará nuestro catálogo de equipos.'
-          )}
+          onPress={() => router.push('/estudiante/catalogo')}
         >
           <Text style={styles.tarjetaIcono}>💻</Text>
+
           <View style={styles.info}>
             <Text style={styles.tarjetaTitulo}>
               Catálogo de equipos
             </Text>
+
             <Text style={styles.tarjetaTexto}>
               Consulta los equipos disponibles.
             </Text>
           </View>
         </TouchableOpacity>
 
+        {/* Mis préstamos */}
         <TouchableOpacity
           style={styles.tarjeta}
-          onPress={() => Alert.alert(
-            'Próximamente',
-            'Aquí estarán tus préstamos.'
-          )}
+        onPress={() => router.push('/estudiante/prestamos')}
         >
           <Text style={styles.tarjetaIcono}>📋</Text>
+
           <View style={styles.info}>
             <Text style={styles.tarjetaTitulo}>
+              
               Mis préstamos
             </Text>
+
             <Text style={styles.tarjetaTexto}>
               Consulta tus solicitudes y estados.
             </Text>
           </View>
         </TouchableOpacity>
 
+        {/* Mi perfil */}
         <TouchableOpacity
           style={styles.tarjeta}
-          onPress={() => Alert.alert(
-            'Mi perfil',
-            'Aquí mostraremos tus datos personales.'
-          )}
+          onPress={() => router.push('/estudiante/perfil')}
         >
           <Text style={styles.tarjetaIcono}>👤</Text>
+
           <View style={styles.info}>
             <Text style={styles.tarjetaTitulo}>
               Mi perfil
             </Text>
+
             <Text style={styles.tarjetaTexto}>
               Consulta tu información de estudiante.
             </Text>
           </View>
         </TouchableOpacity>
 
+        {/* Cerrar sesión */}
         <TouchableOpacity
           style={styles.cerrar}
           onPress={() => router.replace('/')}
